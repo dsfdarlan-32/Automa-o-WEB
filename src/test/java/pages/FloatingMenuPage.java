@@ -1,23 +1,19 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
-
 import maps.FloatingMenuMaps;
 
-public class FloatingMenuPage {
-  private WebDriver driver;
+public class FloatingMenuPage extends BasePage {
   FloatingMenuMaps floatingMenuMaps;
   
-  public FloatingMenuPage(WebDriver driver) {
-    this.driver = driver;
-    floatingMenuMaps = new FloatingMenuMaps(driver);
+  public FloatingMenuPage() {
+    floatingMenuMaps = new FloatingMenuMaps();
   }
   
   public void clickMenu(String text) {
-    floatingMenuMaps.Menu(text).click();
+    click(floatingMenuMaps.Menu(text));
   }
   
   public void clickCasoDeTeste() {
-    floatingMenuMaps.casoDeTeste().click();
+    click(floatingMenuMaps.casoDeTeste);
   }
 }

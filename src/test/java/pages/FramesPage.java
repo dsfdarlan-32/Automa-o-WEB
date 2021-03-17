@@ -1,23 +1,19 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
-
 import maps.FramesMaps;
 
-public class FramesPage {
-  private WebDriver driver;
+public class FramesPage extends BasePage {
   FramesMaps framesMaps;
   
-  public FramesPage(WebDriver driver) {
-    this.driver = driver;
-    framesMaps = new FramesMaps(driver);
+  public FramesPage() {
+    framesMaps = new FramesMaps();
   }
   
   public void clickCasoDeTeste() {
-    framesMaps.casoDeTeste().click();
-    framesMaps.iFrame().click();
-    framesMaps.frame();
-    framesMaps.caixaTexto().clear();
-    framesMaps.caixaTexto().sendKeys("teste");
+    click(framesMaps.casoDeTeste);
+    click(framesMaps.iFrame);
+    moveToFrame(framesMaps.frame);
+    clear(framesMaps.caixaTexto);
+    sendKeys(framesMaps.caixaTexto, "teste");
   }
 }

@@ -1,21 +1,17 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
-
 import maps.ForgotPasswordMaps;
 
-public class ForgotPasswordpage {
-  private WebDriver driver;
+public class ForgotPasswordpage extends BasePage{
   ForgotPasswordMaps forgotPasswordMaps;
   
-  public ForgotPasswordpage(WebDriver driver) {
-    this.driver = driver;
-    forgotPasswordMaps = new ForgotPasswordMaps(driver);
+  public ForgotPasswordpage() {
+    forgotPasswordMaps = new ForgotPasswordMaps();
   }
   
   public void clickCasoDeTeste() {
-    forgotPasswordMaps.casoDeTeste().click();
-    forgotPasswordMaps.email().click();
-    forgotPasswordMaps.RetrievePassword().click();
+    click(forgotPasswordMaps.casoDeTeste);
+    click(forgotPasswordMaps.email);
+    click(forgotPasswordMaps.RetrievePassword);
   }
 }

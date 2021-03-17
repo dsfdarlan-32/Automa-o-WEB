@@ -27,7 +27,17 @@ public class BasePage {
     wait.until(ExpectedConditions.visibilityOfElementLocated(by));
   }
   
+  public void clear(By by) {
+    driver.findElement(by).clear();
+  }
+  
+  public void moveToFrame(By by) {
+    driver.switchTo().frame(driver.findElement(by));
+  }
+  
   public void refresh() {
     driver.navigate().refresh();
   }
+  
+  
 }

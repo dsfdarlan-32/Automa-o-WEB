@@ -1,21 +1,17 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
-
 import maps.HoversMaps;
 
-public class HoversPage {
-  private WebDriver driver;
+public class HoversPage extends BasePage {
   HoversMaps hoversMaps;
   
-  public HoversPage(WebDriver driver) {
-    this.driver = driver;
-    hoversMaps = new HoversMaps(driver);
+  public HoversPage() {
+    hoversMaps = new HoversMaps();
   }
   
   public void clickCasoDeTeste() {
-    hoversMaps.casoDeTeste().click();
-    hoversMaps.serAvatar1().click();
-    hoversMaps.viewProfile().isDisplayed();
+    click(hoversMaps.casoDeTeste);
+    click(hoversMaps.serAvatar1);
+    isDisplayed(hoversMaps.viewProfile);
   }
 }

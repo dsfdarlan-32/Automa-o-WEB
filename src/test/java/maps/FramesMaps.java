@@ -1,29 +1,10 @@
 package maps;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class FramesMaps {
-  WebDriver driver;
-  
-  public FramesMaps(WebDriver driver) {
-    this.driver = driver;
-  }
-  
-  public WebElement casoDeTeste() {
-    return driver.findElement(By.xpath("//a[contains(text(),'Frames')]"));
-  }
-  
-  public WebElement iFrame() {
-    return driver.findElement(By.xpath("//a[text()='iFrame']"));
-  }
-  
-  public WebDriver frame() {
-    return driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='mce_0_ifr']")));
-  }
-  
-  public WebElement caixaTexto() {
-    return driver.findElement(By.xpath("//body[@id='tinymce']"));
-  }
+  public By casoDeTeste = By.xpath("//a[contains(text(),'Frames')]");
+  public By iFrame = By.xpath("//a[text()='iFrame']");
+  public By frame = By.xpath("//iframe[@id='mce_0_ifr']");
+  public By caixaTexto = By.xpath("//body[@id='tinymce']");
 }
