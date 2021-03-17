@@ -1,23 +1,21 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
+import java.util.ArrayList;
 
 import maps.MultipleWindowsMaps;
 
-public class MultipleWindowsPage {
-  private WebDriver driver;
+public class MultipleWindowsPage extends BasePage{
   MultipleWindowsMaps multipleWindowsMaps;
   
-  public MultipleWindowsPage(WebDriver driver) {
-    this.driver = driver;
-    multipleWindowsMaps = new MultipleWindowsMaps(driver);
+  public MultipleWindowsPage() {
+    multipleWindowsMaps = new MultipleWindowsMaps();
   }
   
   public void clickCasoDeTeste() {
-    multipleWindowsMaps.casoDeTeste().click();
-    multipleWindowsMaps.clickHere().click();
-    // List<String> abas = new ArrayList<String>(driver.getWindowHandles());
-    // driver.switchTo().window(abas.get(1));
-    multipleWindowsMaps.newWindow().isDisplayed();
+    click(multipleWindowsMaps.casoDeTeste);
+    click(multipleWindowsMaps.clickHere);
+    ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+    driver.switchTo().window(tabs.get(1));
+    isDisplayed(multipleWindowsMaps.newWindow);
   }
 }

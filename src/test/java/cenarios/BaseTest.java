@@ -11,5 +11,6 @@ public class BaseTest {
   @After
   public void encerra() {
     driver.close();
+    driver.quit();
   }
 }

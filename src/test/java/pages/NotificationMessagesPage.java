@@ -1,21 +1,17 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
-
 import maps.NotificationMessagesMaps;
 
-public class NotificationMessagesPage {
-  private WebDriver driver;
+public class NotificationMessagesPage extends BasePage {
   NotificationMessagesMaps notificationMessagesMaps;
   
-  public NotificationMessagesPage(WebDriver driver) {
-    this.driver = driver;
-    notificationMessagesMaps = new NotificationMessagesMaps(driver);
+  public NotificationMessagesPage() {
+    notificationMessagesMaps = new NotificationMessagesMaps();
   }
   
   public void clickCasoDeTeste() {
-    notificationMessagesMaps.casoDeTeste().click();
-    notificationMessagesMaps.clickhere().click();
-    notificationMessagesMaps.flashNotice().isDisplayed();
+    click(notificationMessagesMaps.casoDeTeste);
+    click(notificationMessagesMaps.clickhere);
+    isDisplayed(notificationMessagesMaps.flashNotice);
   }
 }

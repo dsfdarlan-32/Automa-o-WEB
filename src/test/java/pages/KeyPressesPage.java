@@ -3,24 +3,20 @@ package pages;
 import java.awt.AWTException;
 import java.awt.Robot;
 
-import org.openqa.selenium.WebDriver;
-
 import maps.KeyPressesMaps;
 
-public class KeyPressesPage {
-  private WebDriver driver;
+public class KeyPressesPage extends BasePage {
   KeyPressesMaps keyPressesMaps;
   
-  public KeyPressesPage(WebDriver driver) {
-    this.driver = driver;
-    keyPressesMaps = new KeyPressesMaps(driver);
+  public KeyPressesPage() {
+    keyPressesMaps = new KeyPressesMaps();
   }
   
   public void clickCasoDeTeste() throws AWTException {
-    keyPressesMaps.casoDeTeste().click();
-    keyPressesMaps.Key().click();
+    click(keyPressesMaps.casoDeTeste);
+    click(keyPressesMaps.Key);
     Robot robot = new Robot();
-    robot.keyPress('d');
-    keyPressesMaps.youEntered().isDisplayed();
+    robot.keyPress('z');
+    isDisplayed(keyPressesMaps.youEntered);
   }
 }
