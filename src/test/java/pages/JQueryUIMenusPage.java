@@ -9,6 +9,11 @@ public class JQueryUIMenusPage extends BasePage {
     jQueryUIMenusMaps = new JQueryUIMenusMaps();
   }
   
+  /**
+   * fdsfdfdsfsd
+   *  e usad pifpsdi
+   * @throws InterruptedException
+   */
   public void clickCasoDeTeste() throws InterruptedException {
     click(jQueryUIMenusMaps.casoDeTeste);
     /*
