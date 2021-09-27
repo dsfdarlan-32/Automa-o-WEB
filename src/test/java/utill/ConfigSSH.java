@@ -23,20 +23,18 @@ public class ConfigSSH {
 	private InputStream mSShInput;
 	private OutputStream mSSHOutput;
 
-
 	/**
-	 *  Conectar ao servidor via SSH, e abri um canal para executar comandos.
+	 * Conectar ao servidor via SSH, e abri um canal para executar comandos.
 	 * 
-	 * @param esteira
-	 * 			Host para abrir conexão
+	 * @param esteira Host para abrir conexão
 	 * 
 	 * @author dsilvafe
 	 */
 	public void openConexao(String esteira) {
 		JSch.setConfig("PreferredAuthentications", "publickey,keyboard-interactive,password");
 		this.jsch = new JSch();
+
 		try {
-			esteiraAtlys(esteira);
 			this.sessao = jsch.getSession(usuario, host, porta);
 			this.sessao.setPassword(senha);
 			this.sessao.setConfig("StrictHostKeyChecking", "no");
@@ -48,6 +46,7 @@ public class ConfigSSH {
 			System.out.println("canal criado.");
 			this.mSShInput = this.canal.getInputStream();
 			this.mSSHOutput = this.canal.getOutputStream();
+
 		} catch (JSchException | IOException e) {
 			e.printStackTrace();
 			Assert.fail("Falha na conexão");
@@ -55,13 +54,11 @@ public class ConfigSSH {
 	}
 
 	/**
-	 * Executa comando passado 
+	 * Executa comando passado
 	 * 
-	 * @param strComando
-	 * 			Comando a ser executado
-	 * @return
-	 * 		Retorna "true" se o comando foi execultado 
-	 * 				"false" caso der alguma falha 
+	 * @param strComando Comando a ser executado
+	 * @return Retorna "true" se o comando foi execultado "false" caso der alguma
+	 *         falha
 	 * 
 	 * @author dsilvafe
 	 */
@@ -78,7 +75,7 @@ public class ConfigSSH {
 		}
 		return blResult;
 	}
-	
+
 	/**
 	 * retorna String da saida do comando executado.
 	 * 
@@ -101,7 +98,7 @@ public class ConfigSSH {
 		}
 		return strData;
 	}
-	
+
 	/**
 	 * Fecha conexão SSH
 	 * 
