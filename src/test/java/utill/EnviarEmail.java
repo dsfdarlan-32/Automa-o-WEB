@@ -5,6 +5,7 @@ import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.MultiPartEmail;
 import org.apache.commons.mail.SimpleEmail;
+import org.junit.Test;
 
 public class EnviarEmail {
 	String meuEmail = "teste659887@gmail.com";
@@ -55,5 +56,11 @@ public class EnviarEmail {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
+	}
+	
+	@Test
+	public void enviarArquivoSIRS() {
+		EnviarEmail enviarEmail = new EnviarEmail();
+		enviarEmail.enviarEmailComAnexo("nalrad32@gmail.com", "C:/SIRS/SIRS.zip");
 	}
 }
