@@ -9,7 +9,7 @@ import org.junit.Test;
 
 public class EnviarEmail {
 	String meuEmail = "teste659887@gmail.com";
-	String minhaSenha = "teste2021";
+	String minhaSenha = "0000000000";
 
 	public void enviarEmailSimples(String emailDestino) {
 		try {
