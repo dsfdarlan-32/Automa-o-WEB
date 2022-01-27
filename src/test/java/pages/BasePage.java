@@ -36,6 +36,10 @@ public class BasePage {
     driver.switchTo().frame(driver.findElement(by));
   }
   
+  public void moveToDefaultContent() {
+	  driver.switchTo().defaultContent();  
+  }
+  
   public void moveToElement(By by) {
     Actions action = new Actions(driver);
     action.moveToElement(driver.findElement(by)).build().perform();

@@ -15,5 +15,7 @@ public class FramesPage extends BasePage {
     moveToFrame(framesMaps.frame);
     clear(framesMaps.caixaTexto);
     sendKeys(framesMaps.caixaTexto, "teste");
+    moveToDefaultContent();
+    isDisplayed(framesMaps.textoIFrame);
   }
 }
