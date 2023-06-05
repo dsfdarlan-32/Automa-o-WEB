@@ -36,6 +36,7 @@ public class LeitoDados {
 					}
 				}
 			}
+			workbook.close();
 			dataSheet.close();
 		} catch (IOException e) {
 			System.out.println(GeneralMessage.DATASHEETERROR.getMessage() + ": " + e.getMessage());
